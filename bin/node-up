@@ -7,7 +7,7 @@ var ActionsRegistry = require('../lib/actions');
 var helpers = require('../lib/helpers');
 require('colors');
 
-console.log('\nSails Delpoy: Production Quality Sails Deployments'.bold.blue);
+console.log('\nNodeJs : Production Quality NodeJs Deployments'.bold.blue);
 console.log('------------------------------------------------\n'.bold.blue);
 
 var action = process.argv[2];
