@@ -1,0 +1,56 @@
+{
+  "_from": "sails-deploy-up",
+  "_id": "sails-deploy-up@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-dbUeIhvF0KwO5+pxc8v90qMtgSs=",
+  "_location": "/sails-deploy-up",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "sails-deploy-up",
+    "name": "sails-deploy-up",
+    "escapedName": "sails-deploy-up",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/sails-deploy-up/-/sails-deploy-up-0.1.0.tgz",
+  "_shasum": "75b51e221bc5d0ac0ee7ea7173cbfdd2a32d812b",
+  "_spec": "sails-deploy-up",
+  "_where": "/home/sunilmakwana/sunilmakwana/node_projects/snapAcleaner",
+  "author": {
+    "name": "Tibor Fulop",
+    "email": "fuloptibi@gmail.com"
+  },
+  "bin": {
+    "sails-up": "./bin/sails-deploy"
+  },
+  "bugs": {
+    "url": "https://github.com/fuloptibi/sails-deploy/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "archiver": "0.14.x",
+    "async": "^0.9.0",
+    "cjson": "0.3.x",
+    "colors": "0.6.x",
+    "nodemiral": "^1.1.1",
+    "rimraf": "2.x.x",
+    "underscore": "1.7.0",
+    "uuid": "1.4.x"
+  },
+  "deprecated": false,
+  "description": "Production Quality Sails.js Deployments",
+  "homepage": "https://github.com/fuloptibi/sails-deploy#readme",
+  "license": "MIT",
+  "name": "sails-deploy-up",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuloptibi/sails-deploy.git"
+  },
+  "version": "0.1.0"
+}
