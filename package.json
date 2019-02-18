@@ -27,7 +27,7 @@
     "email": "mahidapath7@gmail.com"
   },
   "bin": {
-    "sails-up": "./bin/node-up"
+    "node-up": "./bin/node-up"
   },
   "bugs": {
     "url": "https://github.com/mahidapath7/node-up/issues"
