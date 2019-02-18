@@ -1,16 +1,16 @@
 {
-  "_from": "sails-deploy-up",
-  "_id": "sails-deploy-up@0.1.0",
+  "_from": "node-up",
+  "_id": "node-up@0.1.0",
   "_inBundle": false,
   "_integrity": "sha1-dbUeIhvF0KwO5+pxc8v90qMtgSs=",
-  "_location": "/sails-deploy-up",
+  "_location": "/node-up",
   "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "sails-deploy-up",
-    "name": "sails-deploy-up",
-    "escapedName": "sails-deploy-up",
+    "raw": "node-up",
+    "name": "node-up",
+    "escapedName": "node-up",
     "rawSpec": "",
     "saveSpec": null,
     "fetchSpec": "latest"
@@ -18,19 +18,19 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/sails-deploy-up/-/sails-deploy-up-0.1.0.tgz",
+  "_resolved": "https://registry.npmjs.org/node-up/-/node-up-0.1.0.tgz",
   "_shasum": "75b51e221bc5d0ac0ee7ea7173cbfdd2a32d812b",
-  "_spec": "sails-deploy-up",
+  "_spec": "node-up",
   "_where": "/home/sunilmakwana/sunilmakwana/node_projects/snapAcleaner",
   "author": {
     "name": "Tibor Fulop",
-    "email": "fuloptibi@gmail.com"
+    "email": "mahidapath7@gmail.com"
   },
   "bin": {
-    "sails-up": "./bin/sails-deploy"
+    "sails-up": "./bin/node-up"
   },
   "bugs": {
-    "url": "https://github.com/fuloptibi/sails-deploy/issues"
+    "url": "https://github.com/mahidapath7/node-up/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -44,13 +44,13 @@
     "uuid": "1.4.x"
   },
   "deprecated": false,
-  "description": "Production Quality Sails.js Deployments",
-  "homepage": "https://github.com/fuloptibi/sails-deploy#readme",
+  "description": "Production Quality Node Js Deployments",
+  "homepage": "https://github.com/mahidapath7/node-up#readme",
   "license": "MIT",
-  "name": "sails-deploy-up",
+  "name": "node-up",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fuloptibi/sails-deploy.git"
+    "url": "git+https://github.com/mahidapath7/node-up.git"
   },
   "version": "0.1.0"
 }
