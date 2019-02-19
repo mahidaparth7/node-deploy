@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
+
+if [ ! -d <%= appDirectory %> ]; then
+   echo "Project not exists, Please setup first"
+   exit
+fi;
+
 cd <%= appDirectory %>
+
 if [ ! -d <%= appName %> ]; then
    echo "Project not exists, Please setup first"
    exit
