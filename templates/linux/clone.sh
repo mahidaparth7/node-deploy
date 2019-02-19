@@ -7,8 +7,14 @@ if [ ! -d <%= appName %> ]; then
 fi;
 
 cd <%= appName %>
-sudo echo "git pull started"
-git pull <%= gitData.url %>
+
+git remote set-url origin <%= gitData.url %>
+
+git reset --hard HEAD
+
+echo "git pull started"
+git pull
+echo "git pull done"
 
 if [ -f package.json ]; then
     echo "installing node-modules"
@@ -22,4 +28,4 @@ if [ -f bower.json ]; then
     echo "bower components installed"
 fi
 
-pm2 restart <%= appName %>
+pm2 restart <%= appIdentifier %>

@@ -1,12 +1,19 @@
 #!/bin/bash
 set -e
-cd <%= appDirectory %>
-npm install -g pm2
-if [ -d <%= appName %> ]; then
-   pm2 stop <%= appName %>
-   rm -rf <%= appName %>
-   sudo echo "removed existing directory" --allow-root
+
+if [ ! -d <%= appDirectory %> ]; then
+   echo "creating directory";
+   mkdir -p <%= appDirectory %>
 fi;
+
+cd <%= appDirectory %>
+
+if [ -d <%= appName %> ]; then
+   sudo echo "Project already exists."
+   exit;
+fi;
+
+npm install -g pm2
 
 sudo  echo "cloning started"
 git clone --branch <%= gitData.branch %> <%= gitData.url %> <%= appName %>
@@ -27,6 +34,6 @@ fi
 
 sudo echo "up on pm2"
 
-pm2 start app.js --name=<%= appName %>
+pm2 start app.js --name=<%= appIdentifier %>
 
 sudo echo "server started on pm2"
