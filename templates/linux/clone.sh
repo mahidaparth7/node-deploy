@@ -8,7 +8,7 @@ fi;
 
 cd <%= appName %>
 sudo echo "git pull started"
-git pull
+git pull <%= gitData.url %>
 
 if [ -f package.json ]; then
     echo "installing node-modules"
