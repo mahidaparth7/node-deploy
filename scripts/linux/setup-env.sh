@@ -9,13 +9,13 @@ fi;
 cd <%= appDirectory %>
 
 if [ -d <%= appName %> ]; then
-   sudo echo "Project already exists."
+   echo "Project already exists."
    exit;
 fi;
 
 npm install -g pm2
 
-sudo  echo "cloning started"
+sudo  echo "cloning started from branch" +  <%= gitData.branch %>
 git clone --branch <%= gitData.branch %> <%= gitData.url %> <%= appName %>
 sudo echo "cloning done"
 cd <%= appName %>
