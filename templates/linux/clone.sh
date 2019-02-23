@@ -15,12 +15,13 @@ fi;
 
 cd <%= appName %>
 
-git remote set-url origin <%= gitData.url %>
+git config user.email <%= gitData.email %>
+git config user.name <%= gitData.username %>
 
 git reset --hard HEAD
 
 echo "git pull started"
-git pull
+echo <%= gitData.password %> | git pull
 echo "git pull done"
 
 if [ -f package.json ]; then
