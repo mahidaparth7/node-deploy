@@ -41,19 +41,19 @@ echo "Mongodb installed";
 
 echo "Setting Mongo Config";
 
-mkdir -p /var/lib/mongo
 mkdir -p /var/lib/mongodb
 mkdir -p /var/log/mongodb
+touch /var/log/mongodb/mongodb.log
 
-sudo mongod --dbpath /var/lib/mongodb
-
-sudo mongod --wiredTigerCacheSizeGB 0.25
+sudo chown -R mongod /var/log/mongodb
+sudo chown -R mongod /var/lib/mongodb
+sudo chown -R mongod /etc/mongod.conf
 
 echo "Setting Mongo Config Done";
 
 echo "Starting Mongo";
-# Restart mongodb
 
-sudo mongod restart --fork --syslog >/dev/null
+sudo systemctl enable mongod.service
+sudo service mongod start
 
 echo "Mongodb started";
