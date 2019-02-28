@@ -1,0 +1,30 @@
+{
+    "servers": [{
+        "host": "hostname",
+        "username": "root",
+        "password": "password",
+        "pem": "path to pem file in your local system"
+    }],
+    "setupNode": false,
+    "nodeVersion": "8.15.0",
+    "setupMongo": false,
+    "mongoVersion": "3.4",
+    "appDirectory": "path to folder in server",
+    "appName": "project folder name",
+    "appIdentifier": "pm2 project id",
+    "git": {
+        "url": "git-repo",
+        "branch": "develop",
+        "email": "email",
+        "username": "git username",
+        "password": "git password"
+    },
+    "env": {
+        "NODE_ENV": "production"
+    },
+    "enableUploadProgressBar": true,
+    "logLines": 200,
+    "deployCheckWaitTime": 15,
+    "preInstall": null,
+    "postInstall": null
+}
