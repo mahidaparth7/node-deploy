@@ -21,12 +21,14 @@ git config user.name <%= gitData.username %>
 git reset --hard HEAD
 
 echo "git pull started"
-expect -c 'spawn git pull;
+
+expect -c 'spawn git pull origin "<%= gitData.branch %>";
 expect Username;
 send "<%= gitData.username %>\r";
 expect Password;
 send "<%= gitData.password %>\r";
 interact;'
+
 echo "git pull done"
 
 if [ -f package.json ]; then
@@ -41,4 +43,6 @@ if [ -f bower.json ]; then
     echo "bower components installed"
 fi
 
-pm2 restart <%= appIdentifier %>
+echo "enviorment = $NODE_ENV"
+
+pm2 restart <%= appIdentifier %> --update-env

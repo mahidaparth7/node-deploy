@@ -30,7 +30,7 @@ echo "System updated successfully"
 sudo git config --global user.email <%= gitData.email %>
 sudo git config --global user.name <%= gitData.username %>
 
-sudo  echo "cloning started from branch"  <%= gitData.branch %>
+echo "cloning started from branch"  <%= gitData.branch %>
 
 expect -c 'spawn git clone --branch "<%= gitData.branch %>" "<%= gitData.url %>" "<%= appName %>";
 expect Username;
@@ -39,7 +39,7 @@ expect Password;
 send "<%= gitData.password %>\r";
 interact;'
 
-sudo echo "cloning done"
+echo "cloning done"
 cd <%= appName %>
 
 sudo git config user.email <%= gitData.email %>
@@ -60,8 +60,8 @@ if [ -f bower.json ]; then
     echo "bower components installed"
 fi
 
-sudo echo "up on pm2"
+echo "up on pm2"
 
-pm2 start app.js --name=<%= appIdentifier %>
+pm2 start  app.js --name=<%= appIdentifier %>
 
-sudo echo "server started on pm2"
+echo "server started on pm2"
