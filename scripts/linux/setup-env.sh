@@ -15,6 +15,8 @@ fi;
 
 npm install -g pm2
 
+sudo apt-get install -y expect
+
 git config user.email <%= gitData.email %>
 git config user.name <%= gitData.username %>
 

@@ -20,6 +20,8 @@ git config user.name <%= gitData.username %>
 
 git reset --hard HEAD
 
+sudo apt-get install -y expect
+
 echo "git pull started"
 
 expect -c 'spawn git pull origin "<%= gitData.branch %>";
