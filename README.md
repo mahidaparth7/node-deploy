@@ -1,6 +1,6 @@
 # node-up
 Node app deployment based on [sails-deploy](https://github.com/fuloptibi/sails-deploy)
-
+- This package supports both CentOs and Ubuntu.
 # Installation
 npm install -g https://github.com/mahidaparth7/node-deploy
 
@@ -12,7 +12,7 @@ npm install -g https://github.com/mahidaparth7/node-deploy
 ----------------
 
 # Step 2: Customize your config
-### There are a miniumum of 10 properties in your config that need to be changed.
+### There are a minimum of 10 properties in your config that need to be changed.
 
 **For each server:**
 - host - IP Address of the server
