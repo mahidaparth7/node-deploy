@@ -5,15 +5,15 @@ Node app deployment based on [sails-deploy](https://github.com/fuloptibi/sails-d
 npm install -g https://github.com/mahidaparth7/node-deploy
 
 # Step 1: Initialize your project
-cd path/to/app
-node-up init
+- cd path/to/app
+- `node-up init`
 ----------------
 
 # Step 2: Customize your config
 ### There are a miniumum of 10 properties in your config that need to be changed.
 
 **For each server:**
-- host - Usually is the IP Address of the server
+- host - IP Address of the server
 - server authentication - You can use a password or set pem to the path to a private key. If neither are set, it uses ssh-agent
 
 **For Node, Mongo setup**
@@ -51,7 +51,7 @@ node-up init
   - `node-up setup verbose your-setup-file.json`
 
 
-# Deploy Server / take pull on server and restart
+## Deploy Server / take pull on server and restart
 - For take pull on project on server, It will take latest pull with specified branch on your project and restart the server.
 - `node-up deploy your-setup-file.json`
   - use verbose for deep log.
