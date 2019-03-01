@@ -52,6 +52,7 @@ npm install -g https://github.com/mahidaparth7/node-deploy
   - use verbose for deep log.
   - `node-up setup verbose your-setup-file.json`
 
+![Server Setup](https://github.com/mahidaparth7/node-deploy/blob/master/screenshots/node-up.png)
 
 ## Deploy Server / take pull on server and restart
 - For take pull on project on server, It will take latest pull with specified branch on your project and restart the server.
