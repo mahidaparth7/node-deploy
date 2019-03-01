@@ -1,5 +1,5 @@
 # node-up
-Node app deployment based on [https://github.com/fuloptibi/sails-deploy](#sails-deploy)
+Node app deployment based on [sails-deploy](https://github.com/fuloptibi/sails-deploy)
 
 # Installation
 npm install -g https://github.com/mahidaparth7/node-deploy
