@@ -13,17 +13,41 @@ if [ -d <%= appName %> ]; then
    exit;
 fi;
 
+echo "Installing pm2"
 npm install -g pm2
+echo "pm2 installed"
+
+echo "Installing bower"
+sudo npm install -g bower
+echo "Bower installed"
 
 sudo apt-get install -y expect
 
-git config user.email <%= gitData.email %>
-git config user.name <%= gitData.username %>
+echo "Start System updating"
+sudo apt-get update -y
+echo "System updated successfully"
 
-sudo  echo "cloning started from branch" +  <%= gitData.branch %>
-echo <%= gitData.password %> | git clone --branch <%= gitData.branch %> <%= gitData.url %> <%= appName %>
-sudo echo "cloning done"
+sudo git config --global user.email <%= gitData.email %>
+sudo git config --global user.name <%= gitData.username %>
+
+echo "cloning started from branch" +  <%= gitData.branch %>
+
+expect -c 'spawn git clone --branch "<%= gitData.branch %>" "<%= gitData.url %>" "<%= appName %>";
+expect Username;
+send "<%= gitData.username %>\r";
+expect Password;
+send "<%= gitData.password %>\r";
+interact;'
+
+echo "cloning done"
+
 cd <%= appName %>
+
+sudo git config user.email <%= gitData.email %>
+sudo git config user.name <%= gitData.username %>
+
+git config --global --unset user.name
+git config --global --unset user.email
 
 if [ -f package.json ]; then
     echo "installing node-modules"
@@ -37,8 +61,8 @@ if [ -f bower.json ]; then
     echo "bower components installed"
 fi
 
-sudo echo "up on pm2"
+echo "up on pm2"
 
 pm2 start app.js --name=<%= appIdentifier %>
 
-sudo echo "server started on pm2"
+echo "server started on pm2"

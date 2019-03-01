@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-echo "starting setup log"
+
 if [ ! -d <%= appDirectory %> ]; then
    echo "creating directory";
    mkdir -p <%= appDirectory %>
@@ -40,6 +40,7 @@ send "<%= gitData.password %>\r";
 interact;'
 
 echo "cloning done"
+
 cd <%= appName %>
 
 sudo git config user.email <%= gitData.email %>
