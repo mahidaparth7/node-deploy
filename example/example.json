@@ -12,6 +12,7 @@
     "appDirectory": "path to folder in server",
     "appName": "project folder name",
     "appIdentifier": "pm2 project id",
+    "entryFile": "project entry file",
     "git": {
         "url": "git-repo",
         "branch": "develop",

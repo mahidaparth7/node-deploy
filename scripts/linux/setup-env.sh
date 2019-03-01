@@ -63,6 +63,6 @@ fi
 
 echo "up on pm2"
 
-pm2 start app.js --name=<%= appIdentifier %>
+pm2 start <%= entryFile %> --name=<%= appIdentifier %>
 
 echo "server started on pm2"

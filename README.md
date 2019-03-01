@@ -12,7 +12,7 @@ npm install -g https://github.com/mahidaparth7/node-deploy
 ----------------
 
 # Step 2: Customize your config
-### There are a minimum of 10 properties in your config that need to be changed.
+### There are a minimum of 11 properties in your config that need to be changed.
 
 **For each server:**
 - host - IP Address of the server
@@ -28,6 +28,7 @@ npm install -g https://github.com/mahidaparth7/node-deploy
 - appDirectory: Set Folder path in which you want to setup app
 - appName: App name Which will be created in appDirectory for project
 - appIdentifier: App Id for pm2 server
+- entryFile: Server file of project with extension. for eg: app.js or server.js)
 
 **For Git Setup {Fields inside git key}**
 - url: project git repo url
