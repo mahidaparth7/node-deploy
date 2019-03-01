@@ -6,7 +6,8 @@ npm install -g https://github.com/mahidaparth7/node-deploy
 
 # Step 1: Initialize your project
 - cd path/to/app
-- `node-up init`
+- `node-up init your-setup-file.json`
+- It will create default config file that you can modify for your project.
 ----------------
 
 # Step 2: Customize your config
