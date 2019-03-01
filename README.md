@@ -1,15 +1,15 @@
 # node-up
-Node app deployment based on sails-deploy
+Node app deployment based on [https://github.com/fuloptibi/sails-deploy](#sails-deploy)
 
-#Installation
+# Installation
 npm install -g https://github.com/mahidaparth7/node-deploy
 
-#Step 1: Initialize your project
+# Step 1: Initialize your project
 cd path/to/app
 node-up init
 ----------------
 
-#Step 2: Customize your config
+# Step 2: Customize your config
 ### There are a miniumum of 10 properties in your config that need to be changed.
 
 **For each server:**
