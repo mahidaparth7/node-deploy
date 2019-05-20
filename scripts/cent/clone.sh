@@ -2,15 +2,15 @@
 set -e
 
 if [ ! -d <%= appDirectory %> ]; then
-   echo "Project not exists, Please setup first"
-   exit
+    echo "Project not exists, Please setup first"
+    exit
 fi;
 
 cd <%= appDirectory %>
 
 if [ ! -d <%= appName %> ]; then
-   echo "Project not exists, Please setup first"
-   exit
+    echo "Project not exists, Please setup first"
+    exit
 fi;
 
 cd <%= appName %>
@@ -32,6 +32,22 @@ send "<%= gitData.password %>\r";
 interact;'
 
 echo "git pull done"
+if [ <%= isReact %> == true ]; then
+    echo "installing client modules";
+    cd client;
+    if [ -f package.json ]; then
+        echo "installing node-modules"
+        npm install
+        echo "installed node-modules"
+    fi
+    if [ -f bower.json ]; then
+        echo "installing bower components"
+        bower install --allow-root
+        echo "bower components installed"
+    fi
+    npm run build
+    cd .. && cd server;
+fi;
 
 if [ -f package.json ]; then
     echo "installing node-modules"

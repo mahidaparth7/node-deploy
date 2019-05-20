@@ -2,24 +2,28 @@
 set -e
 
 if [ ! -d <%= appDirectory %> ]; then
-   echo "creating directory";
-   mkdir -p <%= appDirectory %>
+    echo "creating directory";
+    mkdir -p <%= appDirectory %>
 fi;
 
 cd <%= appDirectory %>
 
 if [ -d <%= appName %> ]; then
-   echo "Project already exists."
-   exit;
+    echo "Project already exists."
+    exit;
 fi;
 
-echo "Installing pm2"
-sudo npm install -g --no-optional pm2
-echo "pm2 installed"
+if [ <%= setupPm2 %> == true ]; then
+    echo "Installing pm2"
+    sudo npm install -g --no-optional pm2
+    echo "pm2 installed"
+fi;
 
-echo "Installing bower"
-sudo npm install -g bower
-echo "Bower installed"
+if [ <%= setupBower %> == true ]; then
+    echo "Installing bower"
+    sudo npm install -g bower
+    echo "Bower installed"
+fi;
 
 sudo yum install expect -y
 
@@ -48,6 +52,23 @@ sudo git config user.name <%= gitData.username %>
 
 git config --global --unset user.name
 git config --global --unset user.email
+
+if [ <%= isReact %> == true ]; then
+    echo "installing client modules";
+    cd client;
+    if [ -f package.json ]; then
+        echo "installing node-modules"
+        npm install
+        echo "installed node-modules"
+    fi
+    if [ -f bower.json ]; then
+        echo "installing bower components"
+        bower install --allow-root
+        echo "bower components installed"
+    fi
+    npm run build
+    cd .. && cd server;
+fi;
 
 if [ -f package.json ]; then
     echo "installing node-modules"
